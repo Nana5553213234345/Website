@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+body {
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    font-family: 'VT323', monospace;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: #ff4500;
+    text-shadow: 2px 2px 8px #000000;
+    position: relative;
+    animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 2px 2px 0px #ff4500, -2px -2px 0px #000000;
+    }
+    20% {
+        text-shadow: -2px -2px 0px #ff4500, 2px 2px 0px #000000;
+    }
+    40% {
+        text-shadow: 2px -2px 0px #ff4500, -2px 2px 0px #000000;
+    }
+    60% {
+        text-shadow: -2px 2px 0px #ff4500, 2px -2px 0px #000000;
+    }
+    80% {
+        text-shadow: 2px 2px 0px #ff4500, -2px -2px 0px #000000;
+    }
+    100% {
+        text-shadow: -2px -2px 0px #ff4500, 2px 2px 0px #000000;
+    }
+}
+
+p {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    max-width: 600px;
+    line-height: 1.6;
+    text-shadow: 1px 1px 6px #000000;
+    animation: glitch 1.5s infinite;
+}
+
+img {
+    width: 10%;
+    max-width: 200px;
+    margin-bottom: 40px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.links a {
+    display: block;
+    margin: 20px 0;
+    padding: 10px 20px;
+    background-color: #ff4500;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.links a:hover {
+    background-color: #e63900;
+}
+/* Style for the small image in the bottom right corner */
+.bottom-right {
+    position: absolute;
+    right: 30px;
+    bottom: 1px; 
+}
+
+.secret-image {
+    width: 40px; /* Adjust the size as needed */
+    height: auto;
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+
+.secret-image:hover {
+    opacity: 1;
+}
+
+/* Image grid styling */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Adjust to have 5 images per row */
+    gap: 10px;
+    padding: 20px;
+}
+
+.image-grid img {
+    width: 100%;
+    height: auto;
+    border: 2px solid #ff4500;
+    transition: transform 0.3s ease;
+}
+
+.image-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* Hidden text file styling */
+.text-file {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #0a0a0a;
+    color: #ffffff;
+    padding: 20px;
+    border: 2px solid #ff4500;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.text-content {
+    max-width: 400px;
+    text-align: center;
+}
+
+.text-content p {
+    margin-bottom: 20px;
+}
+
+.text-content button {
+    padding: 10px 20px;
+    background-color: #ff4500;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.text-content button:hover {
+    background-color: #e63900;
+}
+
+/* Pop-up Box Styling */
+.popup-box {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #0a0a0a;
+    color: #ffffff;
+    padding: 20px;
+    border: 2px solid #ff4500;
+    z-index: 1000;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.popup-content {
+    max-width: 400px;
+}
+
+.popup-content input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ff4500;
+    background-color: #0a0a0a;
+    color: #ffffff;
+}
+
+.popup-content button {
+    padding: 10px 20px;
+    background-color: #ff4500;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.popup-content button:hover {
+    background-color: #e63900;
+}
+
+/* Glitch Effect for Incorrect Code */
+@keyframes glitch-effect {
+    0% {
+        transform: translate(2px, -2px);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(2px, 2px);
+    }
+    60% {
+        transform: translate(-2px, -2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.glitch {
+    animation: glitch-effect 0.1s 3;
+}
+
