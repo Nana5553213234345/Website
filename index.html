@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<script src="scripts.js"></script>
+
     <div class="container">
         <h1>49 20 6B 6E 6F 77 20 77 68 61 74 20 79 6F 75 20 77 61 6E 74</h1>
         <p>Iknowhatyouwant --- gift shop</p>
@@ -33,41 +35,5 @@
     </div>
     </div>
 
-    <!-- JavaScript code goes here -->
-    <script>
-        let correctCode = {
-            'layer1': 'secretcode1', // Replace with your actual code
-            'layer2': 'secretcode2'  // Replace with your actual code
-        };
-
-        let targetLayer = '';
-
-        function openPopup(layer) {
-            targetLayer = layer;
-            document.getElementById('popup-box').style.display = 'block';
-        }
-
-        function closePopup() {
-            document.getElementById('popup-box').style.display = 'none';
-        }
-
-        function checkCode() {
-            let enteredCode = document.getElementById('code-input').value;
-            if (enteredCode === correctCode[targetLayer]) {
-                window.location.href = targetLayer + '.html'; // Redirect to the correct layer
-            } else {
-                glitchEffect();
-                document.getElementById('code-input').value = ''; // Clear the input
-            }
-        }
-
-        function glitchEffect() {
-            let popupBox = document.getElementById('popup-box');
-            popupBox.classList.add('glitch');
-            setTimeout(() => {
-                popupBox.classList.remove('glitch');
-            }, 900); // Duration of the glitch effect
-        }
-    </script>
 </body>
 </html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Enigma</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>49 20 6B 6E 6F 77 20 77 68 61 74 20 79 6F 75 20 77 61 6E 74</h1>
+        <p>Iknowhatyouwant --- gift shop</p>
+        <img src="Untitled_Artwork.png" alt="Mysterious Image">
+        
+    <div class="links">
+        <a href="#" onclick="openPopup('layer1')">Just click</a>
+        <a href="#" onclick="openPopup('layer2')">Just click</a>
+    </div>
+    </div>
+
+    <div class="bottom-right">
+        <a href="layer3.html">
+            <img src="gift.png" alt="Secret Image" class="secret-image">
+        </a>
+
+<!-- Pop-up Box -->
+<div id="popup-box" class="popup-box">
+    <div class="popup-content">
+        <p>What are you trying to do?<p>
+        <input type="text" id="code-input" placeholder="">
+        <button onclick="checkCode()">Enter</button>
+        <button onclick="closePopup()">X</button>
+    </div>
+    </div>
+
+    <!-- JavaScript code goes here -->
+    <script>
+        let correctCode = {
+            'layer1': 'secretcode1', // Replace with your actual code
+            'layer2': 'secretcode2'  // Replace with your actual code
+        };
+
+        let targetLayer = '';
+
+        function openPopup(layer) {
+            targetLayer = layer;
+            document.getElementById('popup-box').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup-box').style.display = 'none';
+        }
+
+        function checkCode() {
+            let enteredCode = document.getElementById('code-input').value;
+            if (enteredCode === correctCode[targetLayer]) {
+                window.location.href = targetLayer + '.html'; // Redirect to the correct layer
+            } else {
+                glitchEffect();
+                document.getElementById('code-input').value = ''; // Clear the input
+            }
+        }
+
+        function glitchEffect() {
+            let popupBox = document.getElementById('popup-box');
+            popupBox.classList.add('glitch');
+            setTimeout(() => {
+                popupBox.classList.remove('glitch');
+            }, 900); // Duration of the glitch effect
+        }
+    </script>
+</body>
+</html>
