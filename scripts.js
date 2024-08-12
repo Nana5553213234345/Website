@@ -1,7 +1,7 @@
 // scripts.js
 let correctCode = {
-    'layer1': 'secretcode1', // Replace with your actual code
-    'layer2': 'secretcode2'  // Replace with your actual code
+    'layer1': '71 79 68', // Replace with your actual code
+    'layer2': '47 6C 6F 6F 6D'  // Replace with your actual code
 };
 
 let targetLayer = '';
